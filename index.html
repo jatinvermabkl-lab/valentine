@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You Love Me ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffe6e6;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 120px;
+            font-size: 60px;
+            font-family: 'Pacifico', cursive;
+            color: #e91e63;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 20px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background: #ff4081;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            background: #e91e63;
+        }
+
+        #noBtn {
+            background: white;
+            color: #ff4081;
+            border: 2px solid #ff4081;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Jatin ❤️ You Love Me?</h1>
+
+<button id="yesBtn">YES</button>
+<button id="noBtn" style="top:60%; left:55%;">NO</button>
+
+<script>
+    // YES button
+    document.getElementById("yesBtn").onclick = function() {
+        window.location.href = "love.html";
+    };
+
+    // Moving NO button
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", function () {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>
