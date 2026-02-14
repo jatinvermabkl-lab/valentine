@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>I Love You ❤️</title>
+    <title>Happy Valentine ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
     <style>
@@ -15,15 +15,28 @@
             overflow: hidden;
         }
 
+        .container {
+            margin-top: 120px;
+            padding: 20px;
+        }
+
         h1 {
-            margin-top: 150px;
-            font-size: 60px;
+            font-size: 50px;
+            margin-bottom: 30px;
             animation: pulse 1.5s infinite alternate;
+        }
+
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 22px;
+            max-width: 600px;
+            margin: 15px auto;
+            line-height: 1.6;
         }
 
         @keyframes pulse {
             from { transform: scale(1); }
-            to { transform: scale(1.1); }
+            to { transform: scale(1.08); }
         }
 
         .heart {
@@ -46,38 +59,10 @@
 </head>
 <body>
 
-<h1>Yayyy ❤️ She Loves You Jatin 😍</h1>
+<div class="container">
+    <h1>Happy Valentine’s Day ❤️</h1>
 
-<!-- 🎵 Background Music -->
-<audio id="bgMusic" autoplay loop>
-    <source src="Aankhon_Se_Batana_–_Dikshant_Viral_Song_Official_Video_128k.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-    // Fix autoplay (browser restriction)
-    const music = document.getElementById("bgMusic");
-    music.play().catch(() => {
-        document.addEventListener("click", () => {
-            music.play();
-        });
-    });
-
-    // Floating Hearts Generator
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 6000);
-    }
-
-    setInterval(createHeart, 300);
-</script>
-
-</body>
-</html>
+    <p>You are the most beautiful part of my life.</p>
+    <p>Every moment with you feels like a dream come true.</p>
+    <p>On this Valentine’s Day, I just want to say —</p>
+    <p><strong>I love you more than words can ever express. ❤️</strong></
