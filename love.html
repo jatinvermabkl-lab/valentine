@@ -2,15 +2,16 @@
 <html>
 <head>
     <title>Happy Valentine ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Romantic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
             text-align: center;
-            font-family: 'Pacifico', cursive;
             color: white;
             overflow: hidden;
         }
@@ -21,22 +22,29 @@
         }
 
         h1 {
-            font-size: 50px;
-            margin-bottom: 30px;
-            animation: pulse 1.5s infinite alternate;
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            margin-bottom: 40px;
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
         p {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-size: 22px;
-            max-width: 600px;
-            margin: 15px auto;
-            line-height: 1.6;
+            max-width: 650px;
+            margin: 18px auto;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        @keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.08); }
+        strong {
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 25px #fff; }
         }
 
         .heart {
@@ -65,4 +73,41 @@
     <p>You are the most beautiful part of my life.</p>
     <p>Every moment with you feels like a dream come true.</p>
     <p>On this Valentine’s Day, I just want to say —</p>
-    <p><strong>I love you more than words can ever express. ❤️</strong></
+    <p><strong>I love you more than words can ever express. ❤️</strong></p>
+</div>
+
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="hmm.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Fix autoplay restriction
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.8;
+
+    music.play().catch(() => {
+        document.addEventListener("click", () => {
+            music.play();
+        });
+    });
+
+    // Floating Hearts Animation
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
